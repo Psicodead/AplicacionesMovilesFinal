@@ -1,39 +1,47 @@
 package icesi.movil.astrapp.astrapp;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.media.Image;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 
-public class Inicio extends ActionBarActivity {
-
+public class Inicio extends Activity {
+    private ImageButton iniciar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
+        iniciar= (ImageButton) findViewById(R.id.btn_inicio);
+        iniciar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                siguiente();
+            }
+        });
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_inicio, menu);
-        return true;
+    public void onStart(){
+        super.onStart();
+        //Beginning the loading animation as we attempt to verify registration with SIP
+        ImageView imgLogoAnim = (ImageView) findViewById(R.id.logoAnimado);
+    //    ivLoader.setBackgroundResource(R.anim.animationloader);
+
+
+       // AnimationDrawable frameAnimation = (AnimationDrawable) ivLoader.getBackground();
+       // frameAnimation.start();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+    public void siguiente(){
+        Intent irCreacion = new Intent(getApplicationContext(),ActivityCrear.class);
+        startActivity(irCreacion);
     }
+
 }
