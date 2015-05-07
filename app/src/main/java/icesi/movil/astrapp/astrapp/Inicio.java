@@ -2,18 +2,27 @@ package icesi.movil.astrapp.astrapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.media.Image;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 
 public class Inicio extends Activity {
     private ImageButton iniciar;
+    private ImageView logo;
+    private RelativeLayout fondo;
+
+    AnimationDrawable animacionLogo;
+    AnimationDrawable animacionFondo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,18 +34,23 @@ public class Inicio extends Activity {
                 siguiente();
             }
         });
+
+        //setear animacion del logo
+        logo= (ImageView) findViewById(R.id.logoAnimado);
+        logo.setBackgroundResource(R.drawable.logo_animado);
+        animacionLogo = (AnimationDrawable) logo.getBackground();
+
+        //setear animacion del fondo
+        fondo = (RelativeLayout) findViewById(R.id.fondo_inicio);
+        fondo.setBackgroundResource(R.drawable.fondo_inicio_animacion);
+        animacionFondo = (AnimationDrawable) fondo.getBackground();
     }
 
 
     public void onStart(){
         super.onStart();
-        //Beginning the loading animation as we attempt to verify registration with SIP
-        ImageView imgLogoAnim = (ImageView) findViewById(R.id.logoAnimado);
-    //    ivLoader.setBackgroundResource(R.anim.animationloader);
-
-
-       // AnimationDrawable frameAnimation = (AnimationDrawable) ivLoader.getBackground();
-       // frameAnimation.start();
+        animacionLogo.start();
+        animacionFondo.start();
     }
 
     public void siguiente(){
