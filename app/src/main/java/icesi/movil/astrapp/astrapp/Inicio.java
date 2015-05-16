@@ -19,7 +19,6 @@ public class Inicio extends Activity {
     private ImageButton iniciar;
     private ImageView logo;
     private RelativeLayout fondo;
-
     AnimationDrawable animacionLogo;
     AnimationDrawable animacionFondo;
 
@@ -34,23 +33,25 @@ public class Inicio extends Activity {
                 siguiente();
             }
         });
-
-        //setear animacion del logo
         logo= (ImageView) findViewById(R.id.logoAnimado);
-        logo.setBackgroundResource(R.drawable.logo_animado);
-        animacionLogo = (AnimationDrawable) logo.getBackground();
+       // logo.setBackgroundResource(R.drawable.logo_animado);
+        //animacionLogo = (AnimationDrawable) logo.getBackground();
 
         //setear animacion del fondo
-        fondo = (RelativeLayout) findViewById(R.id.fondo_inicio);
-        fondo.setBackgroundResource(R.drawable.fondo_inicio_animacion);
-        animacionFondo = (AnimationDrawable) fondo.getBackground();
+        //fondo = (RelativeLayout) findViewById(R.id.fondo_inicio);
+        //fondo.setBackgroundResource(R.drawable.fondo_inicio_animacion);
+        //animacionFondo = (AnimationDrawable) fondo.getBackground();
+       // animacionLogo = (AnimationDrawable) logo.getBackground();
+
     }
 
 
     public void onStart(){
         super.onStart();
-        animacionLogo.start();
-        animacionFondo.start();
+        //setear animacion del logo
+
+        //animacionLogo.start();
+        //animacionFondo.start();
     }
 
     public void siguiente(){

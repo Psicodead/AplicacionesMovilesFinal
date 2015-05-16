@@ -13,6 +13,20 @@
         android:id="@+id/ancla_creacion"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="142dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/estado"
+        android:clickable="true"
+        android:textColor="#ffffffff"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:onClick="onClick"
+        android:layout_gravity="center_horizontal|bottom"
+        android:singleLine="false"
+        android:focusable="false"
+        android:layout_margin="1dp" />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal"
@@ -24,7 +38,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:visibility="visible"
-        android:layout_marginBottom="5dp">
+        android:layout_marginBottom="5dp"
+        android:alpha="1">
 
         <ImageButton
             android:layout_width="35dp"
@@ -106,43 +121,57 @@
         android:layout_height="wrap_content"
         android:id="@+id/barra_herramientas"
         android:background="#874b4b4b"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+        android:visibility="visible">
 
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:id="@+id/imageButton8"
+            android:id="@+id/pincel"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:adjustViewBounds="false" />
+            android:adjustViewBounds="false"
+            android:src="@drawable/btn_pincel"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:padding="0dp" />
 
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:id="@+id/imageButton9"
+            android:id="@+id/finalizar"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:adjustViewBounds="false" />
+            android:adjustViewBounds="false"
+            android:src="@drawable/btn_check"
+            android:scaleType="fitCenter"
+            android:background="@null" />
 
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:id="@+id/imageButton10"
+            android:id="@+id/refrescar"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:adjustViewBounds="false" />
+            android:adjustViewBounds="false"
+            android:src="@drawable/btn_refrescar"
+            android:scaleType="fitCenter"
+            android:background="@null" />
 
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:id="@+id/imageButton11"
+            android:id="@+id/ayuda"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:adjustViewBounds="false" />
+            android:adjustViewBounds="false"
+            android:src="@drawable/btn_ayuda"
+            android:scaleType="fitCenter"
+            android:background="@null" />
     </LinearLayout>
 
 
